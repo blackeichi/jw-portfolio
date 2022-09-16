@@ -92,7 +92,7 @@ export const Info = styled.div`
 export const Name = styled.h1`
   font-family: "NotoSerifKRbold";
   color: ${(props) => props.theme.blueColr};
-  font-size: 3vh;
+  font-size: 3 vh;
   margin-bottom: 10px;
 `;
 export const Text = styled.h1`

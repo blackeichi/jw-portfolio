@@ -1,3 +1,4 @@
 export const Proposal = () => {
-  return null;
+  return (
+  )
 };
