@@ -34,7 +34,16 @@ const BottomBox = styled.div<{ isLarge: boolean }>`
   flex-direction: ${(props) => (props.isLarge ? "row" : "column")};
   text-align: ${(props) => (props.isLarge ? "start" : "center")};
   gap: ${(props) => (props.isLarge ? "0" : "3vh")};
-  align-items: center;
+  align-items: ${(props) => (props.isLarge ? "flex-end" : "center")};
+`;
+const Btn = styled.h1`
+  font-size: 2.5vh;
+  font-weight: 700;
+  font-family: "NotoSerifKRbold";
+  background-color: ${(props) => props.theme.pupleColr};
+  padding: 15px;
+  border-radius: 20px;
+  color: white;
 `;
 
 export const Home = () => {
@@ -62,11 +71,7 @@ export const Home = () => {
   return (
     <Box isLarge={large}>
       <TopBox>
-        <Title
-          isLarge={large}
-          one="조직의 발전을 위해"
-          two="끊임없이 노력하는 인재 한정우입니다."
-        />
+        <Title isLarge={large} one="Hello World!" two="BRAND ME." />
         {large ? <SubTitle>2021~2022 Portpolio</SubTitle> : null}
       </TopBox>
       <BottomBox isLarge={large}>
@@ -76,7 +81,7 @@ export const Home = () => {
           whileHover={{ scale: 1.2 }}
           style={{ cursor: "pointer" }}
         >
-          <FontAwesomeIcon size="4x" icon={faHandPointRight} />
+          <Btn>START</Btn>
         </motion.div>
       </BottomBox>
     </Box>

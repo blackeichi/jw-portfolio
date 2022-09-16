@@ -1,3 +1,4 @@
 export const Theme = {
-   blueColr : "#668EFD" 
-}
+  blueColr: "#7c73e6",
+  pupleColr: "#cca8e9",
+};

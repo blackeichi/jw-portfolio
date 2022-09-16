@@ -7,19 +7,19 @@ const TextBox = styled.div`
   gap: 7px;
 `;
 const OneLine = styled.h2`
-  font-size: 4vh;
+  font-size: 5vh;
   color: rgba(0, 0, 0, 0.6);
   font-weight: 100;
   font-family: "NotoSerifKRlight";
 `;
 const TwoLine = styled.h1`
-  font-size: 4.5vh;
+  font-size: 5.5vh;
   font-weight: 100;
   font-family: "NotoSerifKRbold";
   color: ${(props) => props.theme.blueColr};
 `;
 const ThreeLine = styled.h3`
-  font-size: 4vh;
+  font-size: 5vh;
   font-weight: 500;
   font-family: "NotoSerifKRmed";
   color: rgba(0, 0, 0, 0.7);
