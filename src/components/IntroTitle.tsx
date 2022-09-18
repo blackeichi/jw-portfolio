@@ -13,7 +13,7 @@ const OneLine = styled.h2`
   font-family: "NotoSerifKRlight";
 `;
 const TwoLine = styled.h1`
-  font-size: 5.5vh;
+  font-size: 7vh;
   font-weight: 100;
   font-family: "NotoSerifKRbold";
   color: ${(props) => props.theme.blueColr};

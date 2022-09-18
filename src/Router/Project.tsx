@@ -1,19 +1,14 @@
+import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { SwiperSlide, Swiper } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import { Pagination } from "swiper";
-import "./utils/slide.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { IntroPage } from "./components/IntroPage";
-import { CoverLetter } from "./components/CoverLetter";
-import { converletter } from "./utils/data";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { CoverLetter } from "../components/CoverLetter";
+import { HomeBtn } from "../components/HomeBtn";
+import { IntroPage } from "../components/IntroPage";
+import { converletter } from "../utils/data";
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   background-color: ${(props) => props.theme.blueColr};
   width: 100vw;
   height: 100vh;
@@ -21,22 +16,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Icon = styled(motion.div)`
-  position: fixed;
-  bottom: 70px;
-  right: 70px;
-  z-index: 1;
-  width: 70px;
-  height: 70px;
-  background-color: lightgray;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
-`;
 
-export const Proposal = () => {
+export const Project = () => {
   const [screen, setScreen] = useState(window.outerWidth);
   const [large, setLarge] = useState(true);
   const handelResize = () => {
@@ -54,10 +35,14 @@ export const Proposal = () => {
     return () => {
       window.removeEventListener("resize", handelResize);
     };
-  });
-  const navigate = useNavigate();
+  }, [large, screen]);
+
   return (
-    <Container>
+    <Container
+      initial={{ x: 1500 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.5, type: "spring" }}
+    >
       <Swiper
         slidesPerView={"auto"}
         centeredSlides={true}
@@ -69,10 +54,10 @@ export const Proposal = () => {
       >
         <SwiperSlide>
           <IntroPage
-            cover={true}
+            project={true}
             large={large}
             titleone="한정우"
-            titletwo="자기소개서"
+            titletwo="PROJECTS"
             slide={true}
           />
         </SwiperSlide>
@@ -108,16 +93,8 @@ export const Proposal = () => {
             query={converletter.query[3]}
           />
         </SwiperSlide>
-        <Icon
-          whileHover={{ backgroundColor: "#ffc93c" }}
-          transition={{ duration: 0.1 }}
-          onClick={() => {
-            navigate("/profile");
-          }}
-        >
-          <FontAwesomeIcon size="2x" color="white" icon={faHome} />
-        </Icon>
       </Swiper>
+      <HomeBtn />
     </Container>
   );
 };

@@ -18,12 +18,12 @@ const Main = styled.h1`
 `;
 
 type TitleProps = {
-  one: string;
+  one?: string;
   two: string;
-  isLarge: boolean;
+  isLarge?: boolean;
 };
 
-export const Title: React.FC<TitleProps> = ({ one, two, isLarge }) => {
+export const Title: React.FC<TitleProps> = ({ one, two, isLarge = false }) => {
   return (
     <TitleBox isLarge={isLarge}>
       <Sub>{one}</Sub>

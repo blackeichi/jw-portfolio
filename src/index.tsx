@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { Theme } from "./utils/styled";
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -35,6 +36,11 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color : #7c73e6;
+	-webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
 }
 ol, ul {
 	list-style: none;
@@ -55,7 +61,9 @@ root.render(
   <React.StrictMode>
     <GlobalStyle />
     <ThemeProvider theme={Theme}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
 );

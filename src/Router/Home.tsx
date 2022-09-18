@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IntroPage } from "./components/IntroPage";
+import { IntroPage } from "../components/IntroPage";
 
 export const Home = () => {
   const [screen, setScreen] = useState(window.outerWidth);
@@ -18,7 +18,8 @@ export const Home = () => {
     return () => {
       window.removeEventListener("resize", handelResize);
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <IntroPage

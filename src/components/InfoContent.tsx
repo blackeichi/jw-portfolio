@@ -3,7 +3,6 @@ import React from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { faCertificate } from "@fortawesome/free-solid-svg-icons";
 
 type ContentType = {
   title: string;
@@ -12,14 +11,13 @@ type ContentType = {
   three?: string;
   four?: string;
   icon?: any;
-  name?: boolean;
   navi?: string;
 };
 
-export const ContentTitle = styled.h1<{ name?: boolean }>`
+export const ContentTitle = styled.h1`
   font-family: "NotoSerifKRbold";
   color: ${(props) => props.theme.blueColr};
-  font-size: ${(props) => (props.name ? "3vh" : "2.6vh")};
+  font-size: 3vh;
   margin-bottom: 10px;
 `;
 const Container = styled.div`
@@ -41,7 +39,9 @@ const Iconbox = styled(motion.div)`
 export const Info = styled(motion.div)`
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 2vh 0;
+  padding-bottom: 2.5vh;
   width: 80%;
+  height: 25vh;
   display: flex;
   flex-direction: column;
 `;
@@ -49,7 +49,7 @@ export const Text = styled.h1`
   font-family: "NotoSerifKRmed";
   color: rgba(0, 0, 0, 0.6);
   margin: 0.8vh 0;
-  font-size: 2vh;
+  font-size: 2.3vh;
 `;
 
 const boxAnime = {
@@ -68,7 +68,6 @@ export const InfoContent: React.FC<ContentType> = ({
   three,
   four,
   icon,
-  name = false,
   navi,
 }) => {
   const navigate = useNavigate();
@@ -83,9 +82,9 @@ export const InfoContent: React.FC<ContentType> = ({
       animate="visible"
       transition={{ duration: 1 }}
     >
-      <ContentTitle name={name}>{title}</ContentTitle>
+      <ContentTitle>{title}</ContentTitle>
       <Text>{one}</Text>
-      <Text> {two}</Text>
+      <Text>{two}</Text>
       <Text>{three}</Text>
       <Text>{four}</Text>
       {icon ? (

@@ -1,23 +1,22 @@
 import {
   faBookOpen,
   faCertificate,
-  faCircleInfo,
   faCube,
-  faGraduationCap,
   faLayerGroup,
+  faProjectDiagram,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 import styled from "styled-components";
-import { Horizontal } from "./components/Horizontal";
-import { ContentTitle, InfoContent } from "./components/InfoContent";
-import { IntroTitle } from "./components/IntroTitle";
-import { Vertical } from "./components/Vertical";
+import { Horizontal } from "../components/Horizontal";
+import { InfoContent } from "../components/InfoContent";
+import { IntroTitle } from "../components/IntroTitle";
+import { Vertical } from "../components/Vertical";
 import { motion } from "framer-motion";
+import { converletter } from "../utils/data";
 
-const Box = styled.div<{ isLarge: string }>`
+const Box = styled(motion.div)<{ isLarge: string }>`
   width: 100vw;
   min-height: 100vh;
   display: grid;
@@ -32,6 +31,7 @@ const Box = styled.div<{ isLarge: string }>`
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  background-color: white;
 `;
 const Overlay = styled(motion.div)`
   position: fixed;
@@ -136,9 +136,14 @@ export const Profile = () => {
     return () => {
       window.removeEventListener("resize", handelResize);
     };
-  });
+  }, [large, screen]);
   return (
-    <Box isLarge={large}>
+    <Box
+      animate={{ x: 0 }}
+      exit={{ x: -1500 }}
+      transition={{ duration: 0.5 }}
+      isLarge={large}
+    >
       {large ? (
         <Overlay
           variants={boxAnime}
@@ -178,42 +183,58 @@ export const Profile = () => {
           <One>
             <InfoContent
               title={"한정우 /HanJeongWoo"}
-              name={true}
               one={"1995.06.13 / 28세"}
               two={"Tel : 010-9492-2246"}
               three={"Email : blackeichi@naver.com"}
               four={"Adress : 강원도 원주시 무실동"}
               icon={faUserCircle}
-              navi={"proposal"}
+              navi={"me"}
             />
             <InfoContent
               title={"GRADUATION"}
-              two={"2014 강릉원주대학교 정보통신공학과 입학"}
-              three={"2019 강릉원주대학교 정보통신공학과 졸업"}
-              icon={faGraduationCap}
+              one={"2014 강릉원주대학교 정보통신공학과 입학"}
+              two={"2019 강릉원주대학교 정보통신공학과 졸업"}
+              three={"-"}
+              four={"-"}
             />
             <InfoContent
               title={"주요 기술"}
               one={"◾ JavaScript, ES6"}
               two={"◾ ReactJS"}
               three={"◾ React Native"}
+              four={"◾ HTML, CSS"}
               icon={faLayerGroup}
+              navi={"stack"}
             />
           </One>
           <Two>
             <InfoContent
               title={"자격증"}
-              two={"2022 정보처리기사 자격증"}
-              three={"2021 컴퓨터활용능력 1급"}
-              four={"2020 토익 835"}
+              one={"2022 정보처리기사 자격증"}
+              two={"2021 컴퓨터활용능력 1급"}
+              three={"2020 토익 835"}
+              four={"-"}
               icon={faCertificate}
+              navi={"certify"}
             />
             <InfoContent
-              title={"GRADUATION"}
-              two={"2014 강릉원주대학교 정보통신공학과 입학"}
-              three={"2019 강릉원주대학교 정보통신공학과 졸업"}
+              title={"PROJEJCT"}
+              one={"◾ 포트폴리오 웹사이트"}
+              two={"◾ 다이어리 안드로이드앱"}
+              three={"◾ 왓챠 안드로이드앱"}
+              four={"◾ MARVEL HERO 웹사이트 ..."}
+              icon={faProjectDiagram}
+              navi={"project"}
             />
-            <InfoContent title={"자기소개서"} two={"더 보기..."} />
+            <InfoContent
+              title={"자기소개서"}
+              one={`◾ ${converletter.query[0]}`}
+              two={`◾ ${converletter.query[1]}`}
+              three={`◾ ${converletter.query[2]}`}
+              four={`◾ ${converletter.query[3]}`}
+              icon={faBookOpen}
+              navi={"proposal"}
+            />
           </Two>
         </Statement>
       ) : large === "med" ? (

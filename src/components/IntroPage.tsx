@@ -5,7 +5,14 @@ import { Contact } from "./Contact";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faEnvelope,
+  faListCheck,
+  faRectangleAd,
+  faRectangleList,
+  faRectangleTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Box = styled.div<{ isLarge: boolean }>`
   background-color: ${(props) => props.theme.blueColr};
@@ -59,6 +66,7 @@ const SlideBox = styled(motion.div)<{ large: boolean }>`
 type IntroInterface = {
   home?: boolean;
   cover?: boolean;
+  project?: boolean;
   large?: boolean;
   titleone?: string;
   titletwo: string;
@@ -75,6 +83,7 @@ export const IntroPage: React.FC<IntroInterface> = ({
   home = false,
   cover = false,
   large = true,
+  project = false,
   titleone = "",
   titletwo = "",
   slide,
@@ -97,6 +106,11 @@ export const IntroPage: React.FC<IntroInterface> = ({
             <FontAwesomeIcon size="4x" icon={faEnvelope} />
             <Text># Cover Letter</Text>
           </div>
+        ) : project ? (
+          <div>
+            <FontAwesomeIcon size="4x" icon={faListCheck} />
+            <Text># My Projects</Text>
+          </div>
         ) : null}
         {home ? (
           <motion.div
@@ -111,16 +125,7 @@ export const IntroPage: React.FC<IntroInterface> = ({
         )}
       </BottomBox>
       {slide ? (
-        <SlideBox
-          variants={slideAni}
-          animate="right"
-          transition={{
-            repeat: 4,
-            repeatType: "reverse",
-            duration: 0.3,
-          }}
-          large={large}
-        >
+        <SlideBox large={large}>
           <Text>
             SLIDE <FontAwesomeIcon icon={faArrowRight} />
           </Text>
