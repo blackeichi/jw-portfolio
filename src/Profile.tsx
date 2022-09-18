@@ -1,10 +1,18 @@
-import { faBookOpen, faCube } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBookOpen,
+  faCertificate,
+  faCircleInfo,
+  faCube,
+  faGraduationCap,
+  faLayerGroup,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
 import { Horizontal } from "./components/Horizontal";
-import { InfoContent } from "./components/InfoContent";
+import { ContentTitle, InfoContent } from "./components/InfoContent";
 import { IntroTitle } from "./components/IntroTitle";
 import { Vertical } from "./components/Vertical";
 import { motion } from "framer-motion";
@@ -26,7 +34,7 @@ const Box = styled.div<{ isLarge: string }>`
   justify-content: center;
 `;
 const Overlay = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   background-color: ${(props) => props.theme.blueColr};
   width: 100%;
   height: 100%;
@@ -35,6 +43,7 @@ const Overlay = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `;
 const Introduce = styled.div<{ isLarge: string }>`
   background-color: white;
@@ -52,11 +61,12 @@ const Top = styled.div`
   align-items: center;
   gap: 15px;
 `;
-const Picture = styled.div`
-  width: 150px;
-  height: 150px;
+const Picture = styled.img`
+  width: 170px;
+  height: 170px;
   background-color: gray;
   border-radius: 50%;
+  border: 4px solid ${(props) => props.theme.blueColr};
 `;
 const IntroContent = styled.h3`
   font-family: "NotoSerifKRmed";
@@ -82,31 +92,7 @@ const One = styled.div`
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   border-left: 1px solid rgba(0, 0, 0, 0.2);
 `;
-export const Info = styled.div`
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 5vh 0;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-`;
-export const Name = styled.h1`
-  font-family: "NotoSerifKRbold";
-  color: ${(props) => props.theme.blueColr};
-  font-size: 3 vh;
-  margin-bottom: 10px;
-`;
-export const Text = styled.h1`
-  font-family: "NotoSerifKRmed";
-  color: rgba(0, 0, 0, 0.6);
-  margin: 0.8vh 0;
-  font-size: 2vh;
-`;
-export const ContentTitle = styled.h1`
-  font-family: "NotoSerifKRbold";
-  color: ${(props) => props.theme.blueColr};
-  font-size: 2.6vh;
-  margin-bottom: 10px;
-`;
+
 const Two = styled.div`
   display: flex;
   flex-direction: column;
@@ -151,30 +137,29 @@ export const Profile = () => {
       window.removeEventListener("resize", handelResize);
     };
   });
-  const navigate = useNavigate();
-  const onClick = () => {
-    navigate(`/proposal`);
-  };
   return (
     <Box isLarge={large}>
-      <Overlay
-        variants={boxAnime}
-        initial="visible"
-        animate="hidden"
-        transition={{ duration: 1.5 }}
-      >
-        <motion.div
-          variants={itemAnime}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.3 }}
+      {large ? (
+        <Overlay
+          variants={boxAnime}
+          initial="visible"
+          animate="hidden"
+          transition={{ duration: 1.5 }}
         >
-          <FontAwesomeIcon color="white" size="6x" icon={faCube} />
-        </motion.div>
-      </Overlay>
+          <motion.div
+            variants={itemAnime}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.3 }}
+          >
+            <FontAwesomeIcon color="white" size="6x" icon={faCube} />
+          </motion.div>
+        </Overlay>
+      ) : null}
+
       <Introduce isLarge={large}>
         <Top>
-          <Picture />
+          <Picture src="/img/이력서사진.jpg" alt="이력서사진" />
           <IntroTitle one={"성장하는"} two={"인재"} three={"한정우입니다."} />
         </Top>
         <IntroContent>
@@ -191,24 +176,29 @@ export const Profile = () => {
       {large === "large" ? (
         <Statement isLarge={large}>
           <One>
-            <Info>
-              <Name>한정우 /HanJeongWoo</Name>
-              <Text>1995.06.13 / 28세</Text>
-              <Text>Tel : 010-9492-2246</Text>
-              <Text>Email : blackeichi@naver.com</Text>
-              <Text>Adress : 강원도 원주시 무실동</Text>
-            </Info>
+            <InfoContent
+              title={"한정우 /HanJeongWoo"}
+              name={true}
+              one={"1995.06.13 / 28세"}
+              two={"Tel : 010-9492-2246"}
+              three={"Email : blackeichi@naver.com"}
+              four={"Adress : 강원도 원주시 무실동"}
+              icon={faUserCircle}
+              navi={"proposal"}
+            />
             <InfoContent
               title={"GRADUATION"}
               two={"2014 강릉원주대학교 정보통신공학과 입학"}
               three={"2019 강릉원주대학교 정보통신공학과 졸업"}
+              icon={faGraduationCap}
             />
-            <Info>
-              <ContentTitle>주요 기술</ContentTitle>
-              <Text>◾ JavaScript, ES6</Text>
-              <Text>◾ ReactJS</Text>
-              <Text>◾ React Native</Text>
-            </Info>
+            <InfoContent
+              title={"주요 기술"}
+              one={"◾ JavaScript, ES6"}
+              two={"◾ ReactJS"}
+              three={"◾ React Native"}
+              icon={faLayerGroup}
+            />
           </One>
           <Two>
             <InfoContent
@@ -216,13 +206,14 @@ export const Profile = () => {
               two={"2022 정보처리기사 자격증"}
               three={"2021 컴퓨터활용능력 1급"}
               four={"2020 토익 835"}
+              icon={faCertificate}
             />
             <InfoContent
               title={"GRADUATION"}
               two={"2014 강릉원주대학교 정보통신공학과 입학"}
               three={"2019 강릉원주대학교 정보통신공학과 졸업"}
             />
-            <InfoContent click={true} title={"자기소개서"} two={"더 보기..."} />
+            <InfoContent title={"자기소개서"} two={"더 보기..."} />
           </Two>
         </Statement>
       ) : large === "med" ? (
