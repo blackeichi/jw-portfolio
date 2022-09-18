@@ -13,6 +13,7 @@ const Box = styled.div<{ large: boolean }>`
   flex-direction: column;
   gap: 20px;
   position: relative;
+  max-width: 1100px;
 `;
 const Text = styled.h1`
   font-family: "NotoSerifKRmed";
@@ -24,7 +25,7 @@ const Text = styled.h1`
 const Title = styled.h1`
   font-family: "NotoSerifKRbold";
   color: ${(props) => props.theme.blueColr};
-  font-size: 10vh;
+  font-size: 8vh;
   margin-bottom: 10px;
 `;
 const Index = styled.h1`
