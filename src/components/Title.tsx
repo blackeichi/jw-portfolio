@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const TitleBox = styled.div<{ isLarge: boolean }>`
-  text-align: ${(props) => (props.isLarge ? "start" : "center")};
+const TitleBox = styled.div<{ isLarge: string }>`
+  text-align: ${(props) => (props.isLarge === "true" ? "start" : "center")};
   margin-bottom: 20px;
 `;
 const Sub = styled.h1`
@@ -20,10 +20,10 @@ const Main = styled.h1`
 type TitleProps = {
   one?: string;
   two: string;
-  isLarge?: boolean;
+  isLarge?: string;
 };
 
-export const Title: React.FC<TitleProps> = ({ one, two, isLarge = false }) => {
+export const Title: React.FC<TitleProps> = ({ one, two, isLarge = "true" }) => {
   return (
     <TitleBox isLarge={isLarge}>
       <Sub>{one}</Sub>

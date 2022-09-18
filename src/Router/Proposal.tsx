@@ -23,7 +23,7 @@ const Container = styled(motion.div)`
 
 export const Proposal = () => {
   const [screen, setScreen] = useState(window.outerWidth);
-  const [large, setLarge] = useState(true);
+  const [large, setLarge] = useState("true");
   const handelResize = () => {
     setScreen(window.outerWidth);
     console.log(screen);
@@ -31,9 +31,9 @@ export const Proposal = () => {
   useEffect(() => {
     window.addEventListener("resize", handelResize);
     if (screen > 1000) {
-      setLarge(true);
+      setLarge("true");
     } else if (screen <= 1000) {
-      setLarge(false);
+      setLarge("false");
     }
     console.log(large);
     return () => {

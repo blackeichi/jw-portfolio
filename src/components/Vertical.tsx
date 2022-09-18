@@ -32,7 +32,7 @@ export const Vertical = () => {
       }}
       modules={[Pagination]}
     >
-      <SwiperSlide>
+      <SwiperSlide className="veritical">
         <InfoContent
           title={"한정우 /HanJeongWoo"}
           one={"1995.06.13 / 28세"}
@@ -43,7 +43,7 @@ export const Vertical = () => {
           navi={"me"}
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="veritical">
         <InfoContent
           title={"GRADUATION"}
           one={"2014 강릉원주대학교 정보통신공학과 입학"}
@@ -52,7 +52,7 @@ export const Vertical = () => {
           four={"-"}
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="veritical">
         <InfoContent
           title={"주요 기술"}
           one={"◾ JavaScript, ES6"}
@@ -63,7 +63,7 @@ export const Vertical = () => {
           navi={"stack"}
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="veritical">
         <InfoContent
           title={"자격증"}
           one={"2022 정보처리기사 자격증"}
@@ -74,7 +74,7 @@ export const Vertical = () => {
           navi={"certify"}
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="veritical">
         <InfoContent
           title={"PROJEJCT"}
           one={"◾ 포트폴리오 웹사이트"}
@@ -85,7 +85,7 @@ export const Vertical = () => {
           navi={"project"}
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <SwiperSlide className="veritical">
         <InfoContent
           title={"자기소개서"}
           one={`◾ ${converletter.query[0]}`}

@@ -7,3 +7,15 @@ export const converletter = {
     "빠르게 변화하는 IT 시대의 흐름 속에서 무수히 넘쳐나는 아이디어 속에서 새로운 플랫폼과 기술들이 탄생하여 서비스를 구축하고 있습니다. 이러한 흐름 속에서 저는 꾸준한 학습을 통해 흐름에 도태되지 않고, 더 나아가 새로운 기술을 탐구하고 적용하는데 선두가 되겠습니다. 저는 수많은 도전을 할 것이며, 포기하지 않고 회사의 성장에 기여하는 사원이 될 수 있도록 노력하겠습니다.",
   ],
 };
+export const ProjectData = {
+  DiaryApp: {
+    title: "다이어리 앱",
+    video: "/videos/다이어리앱.mp4",
+    description:
+      "사람들이 간편하게 사용할 수 있는 다이어리 안드로이드 앱 입니다. 첫 화면에서 테마(dark, light)를 선택할 수 있으며, 사용자가 테마를 선택하면 Realm DB에 저장하여 앱을 종료후에도 그대로 유지가 됩니다. Home화면에서는 내림차순으로 최신 일기순으로 보여줍니다. 다이어리작성 시 날짜는 자동으로 핸드폰 당일 날짜로 저장이 됩니다. 또한 이미 작성한 다이어리의 Update와 Delete가 가능하며, 핸드폰의 GPS로 해당 지역의 날씨를 볼 수 있습니다.",
+    function:
+      "테마 선택, 당일 날짜로 다이어리 쓰기(emotion, 제목, 일기) 구현, READ, UPDATE, DELETE 구현, 위치에 따른 날씨 보여주기",
+    git: "https://github.com/blackeichi/JwDiary",
+    tec: ["React Native", "styled-components", "JavaScript", "Realm SDK"],
+  },
+};

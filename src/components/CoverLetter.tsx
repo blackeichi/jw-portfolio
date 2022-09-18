@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Box = styled.div<{ large: boolean }>`
+const Box = styled.div<{ large: string }>`
   width: 95%;
   height: 100%;
   background-color: white;
   border-radius: 20px;
-  padding: ${(props) => (props.large ? "5vh 20vh" : "5vh")};
+  padding: ${(props) => (props.large === "true" ? "5vh 20vh" : "5vh")};
   box-sizing: border-box;
   text-align: start;
   display: flex;
@@ -49,14 +49,14 @@ type Interface = {
   index: number;
   query: any;
   ans: any;
-  large?: boolean;
+  large?: string;
 };
 
 export const CoverLetter: React.FC<Interface> = ({
   index,
   query,
   ans,
-  large = false,
+  large = "false",
 }) => {
   return (
     <Box large={large}>

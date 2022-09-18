@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Pagination } from "swiper";
+import { FreeMode, Mousewheel, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { CoverLetter } from "../components/CoverLetter";
+import { ProjectDetail } from "../components/ProjectDetail";
 import { HomeBtn } from "../components/HomeBtn";
 import { IntroPage } from "../components/IntroPage";
-import { converletter } from "../utils/data";
+import { converletter, ProjectData } from "../utils/data";
 
 const Container = styled(motion.div)`
   background-color: ${(props) => props.theme.blueColr};
   width: 100vw;
   height: 100vh;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,24 +20,21 @@ const Container = styled(motion.div)`
 
 export const Project = () => {
   const [screen, setScreen] = useState(window.outerWidth);
-  const [large, setLarge] = useState(true);
-  const handelResize = () => {
-    setScreen(window.outerWidth);
-    console.log(screen);
-  };
+  const [large, setLarge] = useState("false");
   useEffect(() => {
+    const handelResize = () => {
+      setScreen(window.outerWidth);
+    };
     window.addEventListener("resize", handelResize);
     if (screen > 1000) {
-      setLarge(true);
+      setLarge("true");
     } else if (screen <= 1000) {
-      setLarge(false);
+      setLarge("false");
     }
-    console.log(large);
     return () => {
       window.removeEventListener("resize", handelResize);
     };
-  }, [large, screen]);
-
+  });
   return (
     <Container
       initial={{ x: 1500 }}
@@ -44,6 +42,9 @@ export const Project = () => {
       transition={{ duration: 0.5, type: "spring" }}
     >
       <Swiper
+        style={{
+          height: "100%",
+        }}
         slidesPerView={"auto"}
         centeredSlides={true}
         spaceBetween={30}
@@ -52,7 +53,7 @@ export const Project = () => {
         }}
         modules={[Pagination]}
       >
-        <SwiperSlide>
+        <SwiperSlide style={{ height: "100vh", width: "100vw" }}>
           <IntroPage
             project={true}
             large={large}
@@ -61,38 +62,20 @@ export const Project = () => {
             slide={true}
           />
         </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}>
-          <CoverLetter
-            index={1}
+        <SwiperSlide style={{ width: "85%", height: "100%", margin: 0 }}>
+          <ProjectDetail
+            title={ProjectData.DiaryApp.title}
+            video={ProjectData.DiaryApp.video}
+            description={ProjectData.DiaryApp.description}
+            func={ProjectData.DiaryApp.function}
+            git={ProjectData.DiaryApp.git}
+            tec={ProjectData.DiaryApp.tec}
             large={large}
-            ans={converletter.ans[0]}
-            query={converletter.query[0]}
           />
         </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}>
-          <CoverLetter
-            index={2}
-            large={large}
-            ans={converletter.ans[1]}
-            query={converletter.query[1]}
-          />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}>
-          <CoverLetter
-            index={3}
-            large={large}
-            ans={converletter.ans[2]}
-            query={converletter.query[2]}
-          />
-        </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}>
-          <CoverLetter
-            index={4}
-            large={large}
-            ans={converletter.ans[3]}
-            query={converletter.query[3]}
-          />
-        </SwiperSlide>
+        <SwiperSlide style={{ width: "85%" }}></SwiperSlide>
+        <SwiperSlide style={{ width: "85%" }}></SwiperSlide>
+        <SwiperSlide style={{ width: "85%" }}></SwiperSlide>
       </Swiper>
       <HomeBtn />
     </Container>

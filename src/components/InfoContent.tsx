@@ -17,7 +17,7 @@ type ContentType = {
 export const ContentTitle = styled.h1`
   font-family: "NotoSerifKRbold";
   color: ${(props) => props.theme.blueColr};
-  font-size: 3vh;
+  font-size: 2.6vh;
   margin-bottom: 10px;
 `;
 const Container = styled.div`
@@ -49,7 +49,7 @@ export const Text = styled.h1`
   font-family: "NotoSerifKRmed";
   color: rgba(0, 0, 0, 0.6);
   margin: 0.8vh 0;
-  font-size: 2.3vh;
+  font-size: 2vh;
 `;
 
 const boxAnime = {
