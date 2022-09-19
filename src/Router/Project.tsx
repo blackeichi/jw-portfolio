@@ -73,9 +73,40 @@ export const Project = () => {
             large={large}
           />
         </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}></SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}></SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}></SwiperSlide>
+        <SwiperSlide style={{ width: "85%", height: "100%", margin: 0 }}>
+          <ProjectDetail
+            title={ProjectData.WatchaApp.title}
+            video={ProjectData.WatchaApp.video}
+            description={ProjectData.WatchaApp.description}
+            func={ProjectData.WatchaApp.function}
+            git={ProjectData.WatchaApp.git}
+            tec={ProjectData.WatchaApp.tec}
+            large={large}
+          />
+        </SwiperSlide>
+        <SwiperSlide style={{ width: "85%", height: "100%", margin: 0 }}>
+          <ProjectDetail
+            title={ProjectData.Instagram.title}
+            video={ProjectData.Instagram.video}
+            description={ProjectData.Instagram.description}
+            url={ProjectData.Instagram.url}
+            git={ProjectData.Instagram.git}
+            tec={ProjectData.Instagram.tec}
+            large={large}
+          />
+        </SwiperSlide>
+        <SwiperSlide style={{ width: "85%", height: "100%", margin: 0 }}>
+          <ProjectDetail
+            title={ProjectData.MarvelHero.title}
+            image={ProjectData.MarvelHero.image}
+            description={ProjectData.MarvelHero.description}
+            func={ProjectData.MarvelHero.function}
+            url={ProjectData.MarvelHero.url}
+            git={ProjectData.MarvelHero.git}
+            tec={ProjectData.MarvelHero.tec}
+            large={large}
+          />
+        </SwiperSlide>
       </Swiper>
       <HomeBtn />
     </Container>
