@@ -105,18 +105,10 @@ export const IntroPage: React.FC<IntroInterface> = ({
             <Text># Cover Letter</Text>
           </div>
         ) : project ? (
-          <>
-            {large === "true" ? (
-              <div>
-                <Image src="/img/Languages.PNG" />
-                <Text># My Projects</Text>
-              </div>
-            ) : (
-              <div>
-                <FontAwesomeIcon icon={faListCheck} size={"4x"} />
-              </div>
-            )}
-          </>
+          <div>
+            <FontAwesomeIcon icon={faListCheck} size={"4x"} />
+            <Text># My Projects</Text>
+          </div>
         ) : null}
         {home ? (
           <motion.div

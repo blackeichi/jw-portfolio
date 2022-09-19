@@ -75,6 +75,18 @@ export const Project = () => {
         </SwiperSlide>
         <SwiperSlide style={{ width: "85%", height: "100%", margin: 0 }}>
           <ProjectDetail
+            title={ProjectData.portfolio.title}
+            image={ProjectData.portfolio.image}
+            description={ProjectData.portfolio.description}
+            func={ProjectData.portfolio.function}
+            git={ProjectData.portfolio.git}
+            url={ProjectData.portfolio.url}
+            tec={ProjectData.portfolio.tec}
+            large={large}
+          />
+        </SwiperSlide>
+        <SwiperSlide style={{ width: "85%", height: "100%", margin: 0 }}>
+          <ProjectDetail
             title={ProjectData.WatchaApp.title}
             video={ProjectData.WatchaApp.video}
             description={ProjectData.WatchaApp.description}
@@ -89,6 +101,7 @@ export const Project = () => {
             title={ProjectData.Instagram.title}
             video={ProjectData.Instagram.video}
             description={ProjectData.Instagram.description}
+            func={ProjectData.Instagram.function}
             url={ProjectData.Instagram.url}
             git={ProjectData.Instagram.git}
             tec={ProjectData.Instagram.tec}

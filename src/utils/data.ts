@@ -39,6 +39,8 @@ export const ProjectData = {
     video: "/videos/인스타그램.mp4",
     description:
       "NODE JS를 이용한 인스타그램 클론코딩 웹 사이트입니다. 첫 페이지에서 USER의 로그인, 회원가입을 할 수 있으며, 로그인을 하면 Home으로 들어가게 됩니다. Home에서는 다른 유저들의 목록과 게시물들을 볼 수 있으며, 유저간의 팔로우기능, 게시물 업로드 ,게시물 좋아요 및 댓글, 태그 기능 등을 구현하였습니다. 개인적으로 가장 긴 시간을 들인 프로젝트이며, User, 게시물, 댓글, 팔로우, 좋아요 등 다양한 데이터들간의 연동을 위해 고민을 많이 하였었습니다.",
+    function:
+      "로그인, 회원가입, 업데이트, 로그아웃 등의 유저 기능 구현. 게시글, 댓글의 Create, Read, Delete 구현, 중복이 불가능한 좋아요, 팔로우, 태그 기능 추가. 좋아요를 받은 게시글의 Owner에게 알림기능. 유저의 프로필에서 활동을 볼 수 있도록 구현. ",
     git: "https://github.com/blackeichi/Jeongwoo-instagram",
     url: "https://jeongwoo-instagram.herokuapp.com/home",
     tec: ["JavaScript", "Scss", "NODE JS", "PUG", "MONGO DB"],
@@ -61,5 +63,15 @@ export const ProjectData = {
     git: "https://github.com/blackeichi/react-Todo",
     url: "https://blackeichi.github.io/react-Todo/",
     tec: ["JavaScript", "ReactJS", "Styled-Components", "Recoil"],
+  },
+  portfolio: {
+    title: "포트폴리오 웹 사이트",
+    image: ["/img/portpolio-1.PNG", "/img/portpolio-2.PNG"],
+    description:
+      "포트폴리오 용도로 만든 React 프로젝트입니다. 현재 보고 계신 이 웹 사이트입니다. 브라우저의 크기에 따라 페이지 구성 요소도 변하는 반응형 웹으로 제작하였습니다. 많은 Component를 만들어 재활용하고 다양한 애니메이션 효과를 추가하려고 노력하였습니다. ",
+    function: "인적 사항, 기술 스택, 자기소개, 프로젝트 소개, 자격증",
+    git: "https://github.com/blackeichi/jw-portfolio",
+    url: "https://blackeichi.github.io/jw-portfolio",
+    tec: ["JavaScript", "ReactJS", "Styled-Components"],
   },
 };

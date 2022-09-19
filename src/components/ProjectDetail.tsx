@@ -125,7 +125,7 @@ export const ProjectDetail: React.FC<Interface> = ({
                     height: "100%",
                   }}
                 >
-                  <Video controls>
+                  <Video autoPlay={true} controls>
                     <source src={video} type="video/mp4" />
                   </Video>
                   <Text style={{ marginTop: "10px" }}>
@@ -175,7 +175,7 @@ export const ProjectDetail: React.FC<Interface> = ({
                       alignItems: "center",
                     }}
                   >
-                    <Video controls>
+                    <Video autoPlay={true} controls>
                       <source src={video} type="video/mp4" />
                     </Video>
                     <Text style={{ marginTop: "10px" }}>
