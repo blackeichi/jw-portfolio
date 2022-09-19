@@ -107,6 +107,17 @@ export const Project = () => {
             large={large}
           />
         </SwiperSlide>
+        <SwiperSlide style={{ width: "85%", height: "100%", margin: 0 }}>
+          <ProjectDetail
+            title={ProjectData.TodoList.title}
+            image={ProjectData.TodoList.image}
+            description={ProjectData.TodoList.description}
+            url={ProjectData.TodoList.url}
+            git={ProjectData.TodoList.git}
+            tec={ProjectData.TodoList.tec}
+            large={large}
+          />
+        </SwiperSlide>
       </Swiper>
       <HomeBtn />
     </Container>

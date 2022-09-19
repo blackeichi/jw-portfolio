@@ -1,6 +1,6 @@
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -22,11 +22,13 @@ const Title = styled.h1`
   font-size: 2.2vh;
   width: 140px;
 `;
-const Text = styled.h1`
+const Text = styled.h1<{ link?: boolean }>`
   font-family: "NotoSerifKRmed";
   color: rgba(0, 0, 0, 0.7);
   line-height: 20px;
   font-size: 2.2vh;
+  cursor: ${(props) => (props.link ? "pointer" : "default")};
+  text-decoration: ${(props) => (props.link ? "underline" : "none")};
 `;
 const Stack = styled(Text)`
   background-color: rgba(0, 0, 0, 0.1);
@@ -45,13 +47,26 @@ export const ProjectCheck: React.FC<CheckInterface> = ({
   text,
   tec,
 }) => {
+  const [link, setLink] = useState(false);
+  useEffect(() => {
+    if (title === "URL" || title === "GitHub") {
+      setLink(true);
+    }
+  }, []);
+  const onClick = () => {
+    if (link) {
+      return window.open(text);
+    } else {
+      return;
+    }
+  };
   return (
     <Container>
       <Title>
         <FontAwesomeIcon icon={faCheck} /> {title}
       </Title>
-      <Box>
-        {text && <Text>{text}</Text>}
+      <Box onClick={onClick}>
+        {text && <Text link={link}>{text}</Text>}
         {tec && tec.map((item) => <Stack>{item}</Stack>)}
       </Box>
     </Container>

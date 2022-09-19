@@ -14,16 +14,15 @@ const Container = styled.div<{ large?: string }>`
   width: 90%;
   background-color: white;
   border-radius: 20px;
-  padding: 5vh;
-  padding-bottom: 0;
-  box-sizing: border-box;
   text-align: start;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1100px;
-  min-width: 600px;
+  min-width: 540px;
   height: 90%;
+  padding: ${(props) => (props.large !== "true" ? "5vh" : "0")};
+  box-sizing: border-box;
 `;
 const Title = styled.h1`
   font-size: 5vh;
@@ -38,6 +37,10 @@ const Box = styled.div<{ large: string }>`
   justify-content: center;
   align-items: center;
   gap: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 5vh;
+  box-sizing: border-box;
 `;
 const Media = styled.div`
   height: 100%;
@@ -64,8 +67,8 @@ const ImageBox = styled.div<{ large: string }>`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  max-width: 320px;
-  max-height: 370px;
+  max-width: 270px;
+  max-height: 300px;
 `;
 const ContentBox = styled.div``;
 const Text = styled.h2`
@@ -208,7 +211,8 @@ export const ProjectDetail: React.FC<Interface> = ({
                 <Text>{description}</Text>
                 <SubBox>
                   <ProjectCheck title={"팀 구성"} text={team} />
-                  <ProjectCheck title={"주요 기능"} text={func} />
+                  {func && <ProjectCheck title={"주요 기능"} text={func} />}
+                  {url && <ProjectCheck title={"URL"} text={url} />}
                   <ProjectCheck title={"GitHub"} text={git} />
                   <ProjectCheck title={"사용 기술"} tec={tec} />
                 </SubBox>

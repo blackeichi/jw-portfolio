@@ -53,4 +53,13 @@ export const ProjectData = {
     url: "https://blackeichi.github.io/react-superhero",
     tec: ["JavaScript", "ReactJS", "Styled-Components"],
   },
+  TodoList: {
+    title: "TO-DO List",
+    image: ["/img/todo-1.PNG", "/img/todo-2.PNG"],
+    description:
+      "React JS로 처음 만든 웹 프로젝트입니다. Recoil로 데이터를 저장하며, 웹 브라우저를 닫아도 데이터가 유지가능합니다. 카테고리별로 선택하여 list를 작성할 수 있으며, 작성한 list의 카테고리 변경 및 삭제도 가능하게 구현하였습니다. 또 카테고리의 추가 또한 가능합니다.",
+    git: "https://github.com/blackeichi/react-Todo",
+    url: "https://blackeichi.github.io/react-Todo/",
+    tec: ["JavaScript", "ReactJS", "Styled-Components", "Recoil"],
+  },
 };

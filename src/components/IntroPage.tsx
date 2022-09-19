@@ -57,6 +57,9 @@ const Text = styled.h2`
   font-family: "NotoSerifKRbold";
   margin-top: 10px;
 `;
+const Image = styled.img`
+  width: 30vh;
+`;
 const SlideBox = styled(motion.div)<{ large: string }>`
   position: ${(props) => (props.large === "true" ? "absolute" : "flex")};
   right: 100px;
@@ -102,10 +105,18 @@ export const IntroPage: React.FC<IntroInterface> = ({
             <Text># Cover Letter</Text>
           </div>
         ) : project ? (
-          <div>
-            <FontAwesomeIcon size="4x" icon={faListCheck} />
-            <Text># My Projects</Text>
-          </div>
+          <>
+            {large === "true" ? (
+              <div>
+                <Image src="/img/Languages.PNG" />
+                <Text># My Projects</Text>
+              </div>
+            ) : (
+              <div>
+                <FontAwesomeIcon icon={faListCheck} size={"4x"} />
+              </div>
+            )}
+          </>
         ) : null}
         {home ? (
           <motion.div
