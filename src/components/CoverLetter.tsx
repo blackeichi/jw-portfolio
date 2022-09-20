@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Box = styled.div<{ large: string }>`
@@ -48,20 +48,42 @@ const Index = styled.h1`
 type Interface = {
   index: number;
   query: any;
-  ans: any;
-  large?: string;
+  ans: string;
+  twoans?: string;
+  img?: string;
 };
 
 export const CoverLetter: React.FC<Interface> = ({
   index,
   query,
   ans,
-  large = "false",
+  twoans,
+  img,
 }) => {
+  const [screen, setScreen] = useState(window.outerWidth);
+  const [large, setLarge] = useState("true");
+  const handelResize = () => {
+    setScreen(window.outerWidth);
+    console.log(screen);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handelResize);
+    if (screen > 1000) {
+      setLarge("true");
+    } else if (screen <= 1000) {
+      setLarge("false");
+    }
+    console.log(large);
+    return () => {
+      window.removeEventListener("resize", handelResize);
+    };
+  }, [large, screen]);
+
   return (
     <Box large={large}>
       <Title>{query} </Title>
       <Text>{ans}</Text>
+      {twoans && <Text>{twoans}</Text>}
       <Index>{index}</Index>
     </Box>
   );

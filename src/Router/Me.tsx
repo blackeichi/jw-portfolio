@@ -21,7 +21,7 @@ const Container = styled(motion.div)`
   justify-content: center;
 `;
 const Box = styled.div<{ large: string }>`
-  width: 90vw;
+  width: 90%;
   height: 90vh;
   display: grid;
   grid-template-columns: ${(props) =>

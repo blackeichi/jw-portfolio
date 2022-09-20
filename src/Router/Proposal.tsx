@@ -22,25 +22,6 @@ const Container = styled(motion.div)`
 `;
 
 export const Proposal = () => {
-  const [screen, setScreen] = useState(window.outerWidth);
-  const [large, setLarge] = useState("true");
-  const handelResize = () => {
-    setScreen(window.outerWidth);
-    console.log(screen);
-  };
-  useEffect(() => {
-    window.addEventListener("resize", handelResize);
-    if (screen > 1000) {
-      setLarge("true");
-    } else if (screen <= 1000) {
-      setLarge("false");
-    }
-    console.log(large);
-    return () => {
-      window.removeEventListener("resize", handelResize);
-    };
-  }, [large, screen]);
-
   return (
     <Container
       initial={{ x: 1500 }}
@@ -59,41 +40,37 @@ export const Proposal = () => {
         <SwiperSlide>
           <IntroPage
             cover={true}
-            large={large}
             titleone="한정우"
             titletwo="자기소개서"
             slide={true}
           />
         </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}>
+        <SwiperSlide style={{ width: "85%", paddingTop: "5vh" }}>
           <CoverLetter
             index={1}
-            large={large}
             ans={converletter.ans[0]}
             query={converletter.query[0]}
           />
         </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}>
+        <SwiperSlide style={{ width: "85%", paddingTop: "5vh" }}>
           <CoverLetter
             index={2}
-            large={large}
             ans={converletter.ans[1]}
             query={converletter.query[1]}
           />
         </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}>
+        <SwiperSlide style={{ width: "85%", paddingTop: "5vh" }}>
           <CoverLetter
             index={3}
-            large={large}
             ans={converletter.ans[2]}
+            twoans={converletter.ans[3]}
             query={converletter.query[2]}
           />
         </SwiperSlide>
-        <SwiperSlide style={{ width: "85%" }}>
+        <SwiperSlide style={{ width: "85%", paddingTop: "5vh" }}>
           <CoverLetter
             index={4}
-            large={large}
-            ans={converletter.ans[3]}
+            ans={converletter.ans[4]}
             query={converletter.query[3]}
           />
         </SwiperSlide>

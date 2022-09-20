@@ -34,6 +34,7 @@ export const SubTitle = styled.h1`
 `;
 const BottomBox = styled.div<{ isLarge: string }>`
   margin-left: 5px;
+  margin-top: 10vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
