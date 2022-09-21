@@ -95,7 +95,7 @@ export const Me = () => {
       <Box large={large}>
         <Card>
           <Title>About Me</Title>
-          <Photo src="/img/프로필사진.jpg" alt="프로필사진" />
+          <Photo src="img/프로필사진.jpg" alt="프로필사진" />
           <Profile large={large}>
             <IconBox icon={faUser} text={"한정우/(구)한석희"} title={"이름"} />
             <IconBox icon={faCalendar} text={"95.06.13"} title={"생년월일"} />
@@ -117,7 +117,7 @@ export const Me = () => {
             />
           </Profile>
         </Card>
-        <Image src="/img/개명증명서.jpg" alt="개명증명서" />
+        <Image src="img/개명증명서.jpg" alt="개명증명서" />
       </Box>
 
       <HomeBtn />

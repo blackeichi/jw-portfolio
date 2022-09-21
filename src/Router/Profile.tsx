@@ -164,7 +164,7 @@ export const Profile = () => {
 
       <Introduce isLarge={large}>
         <Top>
-          <Picture src="/img/이력서사진.jpg" alt="이력서사진" />
+          <Picture src="img/이력서사진.jpg" alt="이력서사진" />
           <IntroTitle one={"성장하는"} two={"인재"} three={"한정우입니다."} />
         </Top>
         <IntroContent>

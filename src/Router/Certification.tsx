@@ -51,7 +51,7 @@ export const Certification = () => {
           }}
         >
           <Text>정보처리기사</Text>
-          <Image src="/img/정보처리기사.jpg" alt="정보처리기사" />
+          <Image src="img/정보처리기사.jpg" alt="정보처리기사" />
         </div>
         <div
           style={{
@@ -61,7 +61,7 @@ export const Certification = () => {
           }}
         >
           <Text>컴퓨터활용능력 1급</Text>
-          <Image src="/img/컴퓨터활용능력.jpg" alt="컴퓨터활용능력" />
+          <Image src="img/컴퓨터활용능력.jpg" alt="컴퓨터활용능력" />
         </div>
 
         <div
@@ -72,7 +72,7 @@ export const Certification = () => {
           }}
         >
           <Text>토익</Text>
-          <Image src="/img/토익.jpg" alt="토익" />
+          <Image src="img/토익.jpg" alt="토익" />
         </div>
       </ImageBox>
       <HomeBtn />

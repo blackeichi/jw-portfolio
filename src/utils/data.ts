@@ -14,7 +14,7 @@ export const ProjectData = {
   DiaryApp: {
     title: "다이어리 앱",
 
-    video: "/videos/다이어리앱.mp4",
+    video: "videos/다이어리앱.mp4",
 
     description:
       "사람들이 간편하게 사용할 수 있는 다이어리 안드로이드 앱 입니다. 첫 화면에서 테마(dark, light)를 선택할 수 있으며, Animated를 이용하여 시각적인 효과를 추가하였습니다. 사용자가 테마를 선택하면 Realm DB에 저장하여 앱을 종료 후에도 그대로 유지가 됩니다. Home화면에서는 내림차순으로 최신 다이어리 순으로 보여줍니다. 다이어리작성 시 날짜는 자동으로 핸드폰 날짜로 저장이 됩니다. 또한 이미 작성한 다이어리의 Update와 Delete가 가능하며, 핸드폰의 GPS로 해당 지역의 날씨를 볼 수 있습니다.",
@@ -29,7 +29,7 @@ export const ProjectData = {
   WatchaApp: {
     title: "왓챠 앱",
 
-    video: "/videos/왓챠 앱.mp4",
+    video: "videos/왓챠 앱.mp4",
 
     description:
       "Watcha앱을 조금 각색하여 클론 코딩한 앱 입니다. 첫 화면에서는 스크롤 시, Recoil을 이용한 전역변수 사용으로 navigation의 스타일에 영향을 줄 수 있도록 하였습니다. 또 Firebase를 이용하여 로그인과 회원가입을 할 수 있습니다. 로그인 후에는 영화와 TV프로그램, 검색 screen을 통해 정보를 확인할 수 있으며, 각 콘텐츠를 터치하면 Detail한 정보를 확인할 수 있습니다.",
@@ -55,7 +55,7 @@ export const ProjectData = {
   Instagram: {
     title: "인스타그램",
 
-    video: "/videos/인스타그램.mp4",
+    video: "videos/인스타그램.mp4",
 
     description:
       "NODE JS를 이용한 인스타그램 클론 코딩 웹 사이트입니다. 첫 페이지에서 USER의 로그인, 회원가입을 할 수 있으며, 로그인을 하면 Home으로 들어가게 됩니다. Home에서는 다른 유저들의 목록과 게시물들을 볼 수 있으며, 유저간의 팔로우기능, 게시물 업로드 ,게시물 좋아요 및 댓글, 태그 기능 등을 구현하였습니다. 개인적으로 가장 긴 시간을 들인 프로젝트이며, User, 게시물, 댓글, 팔로우, 좋아요 등 다양한 데이터들 간의 연동을 위해 고민을 많이 하였었습니다.",
@@ -73,7 +73,7 @@ export const ProjectData = {
   MarvelHero: {
     title: "마블 히어로즈",
 
-    image: ["/img/marvel/마블히어로-1.png", "/img/marvel/마블히어로-2.png"],
+    image: ["img/marvel/마블히어로-1.png", "img/marvel/마블히어로-2.png"],
 
     description:
       "마블 API를 이용하여 마블의 히어로들과 코믹스의 정보를 확인할 수 있는 웹 사이트입니다. 처음으로 API를 이용하여 만든 REACT 사이트이며, 평소에 히어로를 좋아하는 마음에 개발하게 되었습니다. 수 많은 데이터들이 한 번에 마운트되지 않도록, 데이터 배열을 쪼개고 인덱스를 사용하여 페이지 구분을 하였습니다. 애니메이션 구현과 더불어 버튼을 누르면 인덱스에 따라 데이터들이 불러올 수 있도록 구현하였습니다.",
@@ -90,7 +90,7 @@ export const ProjectData = {
   TodoList: {
     title: "TO-DO List",
 
-    image: ["/img/todo-1.PNG", "/img/todo-2.PNG"],
+    image: ["img/todo-1.PNG", "img/todo-2.PNG"],
 
     description:
       "React로 처음 만든 웹 프로젝트입니다. Recoil로 데이터를 저장하며, 웹 브라우저를 닫아도 데이터가 유지 가능합니다. 카테고리별로 선택하여 list를 작성할 수 있으며, 작성한 list의 카테고리 변경 및 삭제도 가능하게 구현하였습니다. 또 카테고리의 추가 또한 가능합니다.",
@@ -105,7 +105,7 @@ export const ProjectData = {
   portfolio: {
     title: "포트폴리오 웹 사이트",
 
-    image: ["/img/portpolio-1.PNG", "/img/portpolio-2.PNG"],
+    image: ["img/portpolio-1.PNG", "img/portpolio-2.PNG"],
 
     description:
       "포트폴리오 용도로 만든 React 프로젝트입니다. 현재 보고 계신 이 웹 사이트입니다. 브라우저의 크기에 따라 페이지 구성 요소도 변하는 반응형 웹으로 제작하였습니다. 많은 Component를 만들어 재활용하고 다양한 애니메이션 효과를 추가하려고 노력하였습니다. ",
