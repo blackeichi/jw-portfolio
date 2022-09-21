@@ -61,7 +61,7 @@ root.render(
   <React.StrictMode>
     <GlobalStyle />
     <ThemeProvider theme={Theme}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
       </BrowserRouter>
     </ThemeProvider>
