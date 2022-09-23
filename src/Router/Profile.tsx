@@ -186,7 +186,7 @@ export const Profile = () => {
               one={"1995.06.13 / 28세"}
               two={"Tel : 010-9492-2246"}
               three={"Email : blackeichi@naver.com"}
-              four={"Adress : 강원도 원주시 무실동"}
+              four={"Adress : 강원도 원주시 무실동(이사 예정)"}
               icon={faUserCircle}
               navi={"me"}
             />

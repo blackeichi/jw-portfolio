@@ -101,7 +101,7 @@ export const Me = () => {
             <IconBox icon={faCalendar} text={"95.06.13"} title={"생년월일"} />
             <IconBox
               icon={faLocationDot}
-              text={"원주시 시청로"}
+              text={"원주시 시청로(이사예정)"}
               title={"주소"}
             />
             <IconBox icon={faPhone} text={"010-9492-2246"} title={"연락처"} />
